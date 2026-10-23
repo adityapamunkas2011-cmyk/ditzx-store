@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080d19">
+<title>DitzX Store | Akun Free Fire</title>
+<style>
+:root{
+  --bg:#080d19;--panel:#101d32;--line:#203858;
+  --blue:#168bff;--text:#dceaff;--muted:#8da9d2
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);
+font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+.topbar{background:#0b1425;border-bottom:1px solid var(--line);
+position:sticky;top:0;z-index:5}
+.nav{max-width:850px;margin:auto;padding:12px 15px;
+display:flex;align-items:center;gap:10px}
+.brand-icon{width:39px;height:39px;border-radius:12px;
+background:linear-gradient(135deg,#0866ff,#28c4ff);
+display:grid;place-items:center;font-size:23px;font-weight:900}
+.brand{font-size:17px;font-weight:900}
+.brand small{display:block;color:var(--muted);font-size:9px;
+letter-spacing:1.5px;margin-top:3px}
+.nav-contact{margin-left:auto;background:#142d50;color:#70b5ff;
+padding:10px;border-radius:10px;font-size:11px;font-weight:bold}
+main{max-width:850px;margin:auto;padding:15px 13px 30px}
+.hero{background:linear-gradient(120deg,#09295d,#0755bd,#087dff);
+border:1px solid #2468c2;border-radius:18px;padding:22px 17px}
+.eyebrow{font-size:10px;font-weight:bold;letter-spacing:1px;
+background:#ffffff12;border:1px solid #ffffff35;
+padding:6px 9px;border-radius:20px}
+h1{font-size:27px;line-height:1.15;margin:17px 0 8px}
+.hero p{font-size:12px;line-height:1.6;color:#c4dcff;margin:0}
+.search-wrap{display:flex;gap:7px;margin-top:17px;
+padding:6px;background:#101d32;border:1px solid #3765a0;border-radius:12px}
+.search-wrap input{min-width:0;flex:1;background:transparent;
+border:0;outline:0;color:var(--text);padding:8px;font-size:12px}
+.search-wrap input::placeholder{color:#8da9d2}
+.search-wrap button,.buy{border:0;background:var(--blue);
+color:#fff;border-radius:8px;padding:10px;font-size:11px;font-weight:bold}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:12px 0 24px}
+.benefit{background:var(--panel);border:1px solid var(--line);
+padding:10px 5px;border-radius:10px;text-align:center;font-size:10px}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.section-head h2{font-size:19px;margin:0 0 4px}
+.section-head p,.count{font-size:11px;color:var(--muted);margin:0}
+.categories{display:flex;gap:7px;overflow:auto;margin-bottom:12px}
+.chip{flex-shrink:0;border:1px solid var(--line);background:var(--panel);
+color:#c5d8f5;border-radius:20px;padding:9px 12px;font-size:11px}
+.chip.active{background:#1558a6;border-color:#398cff;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.product{background:var(--panel);border:1px solid var(--line);
+border-radius:13px;overflow:hidden;min-width:0}
+.product-art{height:115px;position:relative;background:#0a1426;overflow:hidden}
+.product-art img{width:100%;height:100%;object-fit:cover;display:block}
+.tag{position:absolute;top:7px;left:7px;background:#102d53;
+color:#8dc5ff;padding:5px 7px;border-radius:6px;font-size:9px;font-weight:bold}
+.product-body{padding:10px}
+.game-name{font-size:9px;color:#62a7ff;font-weight:bold;letter-spacing:.5px}
+.product h3{font-size:13px;line-height:1.4;margin:6px 0}
+.desc{font-size:10px;color:var(--muted);line-height:1.5;min-height:30px}
+.price-label{font-size:9px;color:var(--muted);margin-top:10px}
+.price{font-size:14px;font-weight:900;margin-top:4px}
+.buy{display:block;text-align:center;margin-top:10px}
+.help{margin-top:22px;padding:16px;border:1px solid var(--line);
+border-radius:13px;background:#101d32}
+.help h2{font-size:16px;margin:0 0 6px}
+.help p{font-size:11px;color:var(--muted);line-height:1.5}
+footer{text-align:center;padding:22px 12px;color:var(--muted);font-size:10px;line-height:1.8}
+.empty{grid-column:1/-1;padding:25px;text-align:center;color:var(--muted);
+background:var(--panel);border-radius:12px}
+@media(min-width:600px){
+ main{padding-top:22px}.hero{padding:28px}
+ .product-art{height:160px}.product-body{padding:13px}
+}
+
+     /* PREMIUM GLASS EFFECT */
+.topbar {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 28px #168bff30;
+}
+
+.product {
+  background: linear-gradient(145deg, #122849, #071122);
+  border: 1px solid #24518a;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.product:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px #168bff55;
+}
+
+.product-art img {
+  transition: transform .35s ease;
+}
+
+.product:hover .product-art img {
+  transform: scale(1.05);
+}
+
+.price {
+  color: #64b5ff;
+  text-shadow: 0 0 12px #168bff55;
+}
+
+.buy {
+  border-radius: 10px;
+  font-weight: 800;
+  box-shadow: 0 0 12px #168bff44;
+}
+
+.buy:active {
+  transform: scale(.97);
+}
+
+.help {
+  background: linear-gradient(135deg, #102747, #091426);
+  border-radius: 17px;
+  box-shadow: 0 0 18px #168bff20;
+}
+
+
+.brand-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 2px solid #168bff;
+  box-shadow: 0 0 12px #168bff70;
+}
+
+</style>
+</head>
+<body>
+<header class="topbar">
+ <div class="nav">
+  <img class="brand-icon" src="images/profil.png" alt="Foto Profil DitzX">
+  <div class="brand">DITZX STORE<small>FREE FIRE MARKETPLACE</small></div>
+ </div>
+</header>
+<main>
+ <section class="hero">
+  <span class="eyebrow">🔥 WELCOME TO DITZX STORE</span>
+  <h1>Marketplace Akun Free Fire</h1>
+  <p>Cari akun FF pilihanmu. Cek foto, detail, harga, dan tanyakan stok langsung kepada admin.</p>
+  <form class="search-wrap" id="searchForm">
+   <input id="search" type="search" placeholder="Cari akun Free Fire..." aria-label="Cari akun">
+   <button type="submit">Cari</button>
+  </form>
+ </section>
+ <section class="benefits">
+  <div class="benefit">🎮 Akun Free Fire</div>
+  <div class="benefit">💬 Chat Admin</div>
+  <div class="benefit">🔎 Cari Akun</div>
+ </section>
+ <section>
+  <div class="section-head">
+   <div><h2>Produk Akun FF</h2><p>Pilih akun yang kamu minati</p></div>
+   <span class="count" id="count"></span>
+  </div>
+  <div class="categories" id="categories">
+   <button class="chip active" data-filter="Semua">Semua Akun</button>
+   <button class="chip" data-filter="Premium">⭐ Premium</button>
+   <button class="chip" data-filter="Murah">💎 Terjangkau</button>
+  </div>
+  <div class="grid" id="products"></div>
+ </section>
+ <section class="help">
+  <h2>Butuh informasi akun?</h2>
+  <p>Hubungi admin untuk menanyakan stok dan detail akun yang tersedia.</p>
+  <a class="buy" id="helpWA" href="#">Chat Admin via WhatsApp ↗</a>
+ </section>
+</main>
+<footer>DITZX STORE · MARKETPLACE AKUN FREE FIRE<br>
+Periksa detail dan keamanan transaksi sebelum membeli.<br>© 2026 DitzX Store</footer>
+<script>
+/* Pertahankan nomor admin lama */
+const nomorWA = "6283857193066";
+const linkTelegram = "https://t.me/ditzz_stor";
+
+/* Ganti URL foto, nama, dan harga sesuai stok akun asli */
+const produk = [
+ {nama:"Akun FF 01",jenis:"Premium",foto:"images/ff01.jpg",deskripsi:"Detail skin dan bundle: tanyakan admin.",harga:"Hubungi admin",label:"AKUN 01"},
+ {nama:"Akun FF 02",jenis:"Premium",foto:"https://placehold.co/600x400/10274a/66b5ff?text=AKUN+FF+02",deskripsi:"Koleksi karakter: tanyakan admin.",harga:"Hubungi admin",label:"AKUN 02"},
+ {nama:"Akun FF 03",jenis:"Murah",foto:"https://placehold.co/600x400/0b1d38/66b5ff?text=AKUN+FF+03",deskripsi:"Detail akun dan level: tanyakan admin.",harga:"Hubungi admin",label:"AKUN 03"},
+ {nama:"Akun FF 04",jenis:"Murah",foto:"https://placehold.co/600x400/10274a/66b5ff?text=AKUN+FF+04",deskripsi:"Informasi koleksi: tanyakan admin.",harga:"Hubungi admin",label:"AKUN 04"},
+ {nama:"Akun FF 05",jenis:"Premium",foto:"https://placehold.co/600x400/10274a/66b5ff?text=AKUN+FF+05",deskripsi:"Detail akun dan koleksi: tanyakan admin.",harga:"Hubungi admin",label:"AKUN 05"},
+ {nama:"Akun FF 06",jenis:"Premium",foto:"https://placehold.co/600x400/0b1d38/66b5ff?text=AKUN+FF+06",deskripsi:"Informasi bundle: tanyakan admin.",harga:"Hubungi admin",label:"AKUN 06"},
+ {nama:"Akun FF 07",jenis:"Murah",foto:"https://placehold.co/600x400/10274a/66b5ff?text=AKUN+FF+07",deskripsi:"Detail akun: tanyakan admin.",harga:"Hubungi admin",label:"AKUN 07"},
+ {nama:"Akun FF 08",jenis:"Murah",foto:"https://placehold.co/600x400/0b1d38/66b5ff?text=AKUN+FF+08",deskripsi:"Informasi koleksi: tanyakan admin.",harga:"Hubungi admin",label:"AKUN 08"}
+];
+
+let kategoriAktif="Semua";
+function linkWA(pesan){
+ return "https://wa.me/"+nomorWA+"?text="+encodeURIComponent(pesan);
+}
+function tampilkan(){
+ const kata=document.getElementById("search").value.trim().toLowerCase();
+ const daftar=produk.filter(p=>
+  (kategoriAktif==="Semua"||p.jenis===kategoriAktif)&&
+  (p.nama+" "+p.deskripsi+" "+p.jenis).toLowerCase().includes(kata)
+ );
+ document.getElementById("count").textContent=daftar.length+" produk";
+ const tempat=document.getElementById("products");
+ if(!daftar.length){
+  tempat.innerHTML='<div class="empty">Akun tidak ditemukan. Coba kata lain.</div>';
+  return;
+ }
+ tempat.innerHTML=daftar.map(p=>`
+  <article class="product" onclick="detailProduk('${p.nama}')">
+   <div class="product-art">
+    <img src="${p.foto}" alt="${p.nama}" loading="lazy">
+    <span class="tag">${p.label}</span>
+   </div>
+   <div class="product-body">
+    <div class="game-name">FREE FIRE</div>
+    <h3>${p.nama}</h3>
+    <div class="desc">${p.deskripsi}</div>
+    <div class="price-label">HARGA</div>
+    <div class="price">${p.harga}</div>
+    <a class="buy" target="_blank" rel="noopener"
+     onclick="event.stopPropagation()"
+     href="${linkTelegram}">Tanya / Beli via Telegram ↗</a>
+   </div>
+  </article>
+ `).join("");
+}
+document.getElementById("searchForm").addEventListener("submit",e=>{
+ e.preventDefault();tampilkan();
+});
+document.getElementById("search").addEventListener("input",tampilkan);
+document.getElementById("categories").addEventListener("click",e=>{
+ const tombol=e.target.closest("button[data-filter]");
+ if(!tombol)return;
+ kategoriAktif=tombol.dataset.filter;
+ document.querySelectorAll(".chip").forEach(b=>b.classList.remove("active"));
+ tombol.classList.add("active");tampilkan();
+});
+document.getElementById("helpWA").href=linkWA("Halo admin DitzX Store, saya ingin menanyakan stok akun FF.");
+function detailProduk(nama) {
+  const p = produk.find(item => item.nama === nama);
+  if (!p) return;
+
+  const lama = document.getElementById("detailProduk");
+  if (lama) lama.remove();
+
+  const detail = document.createElement("div");
+  detail.id = "detailProduk";
+  detail.style.cssText = "position:fixed;inset:0;z-index:9999;background:#080d19;overflow:auto;padding:20px;color:#dceaff";
+
+  detail.innerHTML = `
+    <button onclick="document.getElementById('detailProduk').remove()"
+      style="padding:10px 15px;background:#168bff;color:white;border:0;border-radius:8px">
+      ← Kembali
+    </button>
+    <img src="${p.foto}" alt="${p.nama}" style="display:block;width:100%;max-height:300px;object-fit:contain;margin:20px auto;border-radius:15px">
+    <h2>${p.nama}</h2>
+    <p>${p.deskripsi}</p>
+    <h3 style="color:#64b5ff">${p.harga}</h3>
+    <a href="${linkTelegram}"
+      target="_blank" rel="noopener"
+      style="display:block;text-align:center;padding:14px;background:#168bff;color:white;text-decoration:none;border-radius:10px;font-weight:bold">
+      Tanya / Beli via Telegram
+    </a>
+  `;
+
+  document.body.appendChild(detail);
+} tampilkan();
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6ad9e3955805fa34618d6f72/1k5hi20nu';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>
